@@ -149,10 +149,6 @@ class NodeElement {
 		);
 	}
 
-	drawIn(ctx, parent) {
-
-	}
-
 	move(dv, zoom) {
 		this.bounds.x += -dv.x * zoom;
 		this.bounds.y += dv.y * zoom;
@@ -212,9 +208,19 @@ class NodeEditor {
 		this.canvas.addEventListener("mousedown", (ev) => {
 			this.is_pressed = true;
 			this.pressed_key = ev.button;
-			// if (this.pressed_key == 0) {
-				this._LastMousePosition = null;
-			// }
+			this._LastMousePosition = null;
+			if (ev.button == 2) {
+				// let _index = this._Nodes.findIndex((_node)=>_node.isInBox(ev, this));
+				// if (_index != -1) {
+					
+				// }
+			}
+		});
+		this.canvas.addEventListener("dblclick", (ev) => {
+			let _a = this._Nodes.some((_node)=>_node.isInBox(ev, this));
+			if (!_a) {
+				this.addNode(new NodeElement());
+			}
 		});
 		this.canvas.addEventListener("mousemove", (ev) => {
 			if (!this.is_pressed) {return;}
@@ -469,6 +475,10 @@ window.addEventListener("load", function() {
 	test_node.setInputs(new NodeCutWire());
 	test_node.setOutputs(new NodeCutWire().name("outputs"));
 	nodeEditor.addNode(test_node);
+	let test_node2 = new NodeElement();
+	test_node2.setInputs(new NodeCutWire());
+	test_node2.setOutputs(new NodeCutWire().name("outputs"));
+	nodeEditor.addNode(test_node2);
 });
 
 window.addEventListener("resize", function() {

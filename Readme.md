@@ -1,0 +1,44 @@
+## checklist
+
+- [x] grid
+	- [x] movement
+	- [x] zoom-scale
+- [x] node
+	- [x] movement
+	- [x] draw
+		- [x] out / inputs
+		- [x] title
+		- [ ] connected wire
+	- [ ] settings 
+		- [ ] horizontal / vertical 
+	- [ ] interaction
+		- [ ] rescale ?
+		- [ ] connect
+		- [ ] select node
+		- [ ] select group
+		- [ ] functions with node-buffer
+		- [ ] set outer node for data
+		- [ ] widgets
+			- [ ] text
+			- [ ] input
+			- [ ] slider
+			- [ ] radio-button
+			- [ ] checklist
+			- [ ] radial-slider
+			- [ ] select-menu
+				- [ ] with fetch
+			- [ ] text-area
+			- [ ] color
+			- [ ] button
+- [ ] support skins
+- [ ] interface
+	- [ ] new node
+	- [ ] open
+	- [ ] save
+	- [ ] tabs-menu
+	- [ ] RCM
+		- [ ] select for node menu
+- [ ] support langs
+	- [ ] c# 
+	- [ ] cpp
+	- [ ] js
